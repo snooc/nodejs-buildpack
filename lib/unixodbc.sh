@@ -2,7 +2,7 @@ install_unixodbc() {
   local version="$1"
   local dir="$2"
 
-  env
+  ldconfig -p
 
   local download_url="http://www.unixodbc.org/unixODBC-$version.tar.gz"
   echo "Downloading and installing unixODBC at $download_url"
@@ -15,4 +15,8 @@ install_unixodbc() {
   ./configure --prefix="$dir"
   make
   make install
+
+  echo "Done"
+
+  ldconfig -p
 }
