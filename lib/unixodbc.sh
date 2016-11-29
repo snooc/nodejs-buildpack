@@ -6,5 +6,11 @@ install_unixodbc() {
   echo "Downloading and installing unixODBC at $download_url"
   curl "$download_url" --silent --fail --retry 5 --retry-max-time 15 -o /tmp/unixodbc.tar.gz || (echo "Unable to download unixODBC" && false)
   tar xzf /tmp/unixodbc.tar.gz -C /tmp
-  ls /tmp
+  mkdir -p $dir
+
+  echo "Building unixODBC from source"
+  cd /tmp/unixODBC-$version
+  ./configure --prefix="$dir"
+  make
+  make install
 }
