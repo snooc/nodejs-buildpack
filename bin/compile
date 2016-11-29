@@ -35,6 +35,7 @@ source $BP_DIR/lib/output.sh
 source $BP_DIR/lib/json.sh
 source $BP_DIR/lib/failure.sh
 source $BP_DIR/lib/environment.sh
+source $BP_DIR/lib/unixodbc.sh
 source $BP_DIR/lib/binaries.sh
 source $BP_DIR/lib/cache.sh
 source $BP_DIR/lib/dependencies.sh
@@ -73,6 +74,10 @@ create_env() {
 header "Creating runtime environment"
 create_env # can't pipe the whole thing because piping causes subshells, preventing exports
 list_node_config | output "$LOG_FILE"
+
+
+header "Installing unixODBC"
+install_unixodbc "2.3.4" "$BUILD_DIR/.heroku/unixodbc" | output "$LOG_FILE"
 
 install_bins() {
   local node_engine=$(read_json "$BUILD_DIR/package.json" ".engines.node")
