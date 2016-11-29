@@ -14,5 +14,8 @@ install_unixodbc() {
   make
   make install
 
+  export PATH="$dir/bin:$PATH"
+  export LD_LIBRARY_PATH="$dir/lib"
+
   env
 }
