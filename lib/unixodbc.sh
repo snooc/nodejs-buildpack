@@ -13,4 +13,6 @@ install_unixodbc() {
   ./configure --prefix="$dir"
   make
   make install
+
+  env
 }
