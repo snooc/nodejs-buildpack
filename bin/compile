@@ -35,8 +35,8 @@ source $BP_DIR/lib/output.sh
 source $BP_DIR/lib/json.sh
 source $BP_DIR/lib/failure.sh
 source $BP_DIR/lib/environment.sh
-source $BP_DIR/lib/unixodbc.sh
 source $BP_DIR/lib/binaries.sh
+source $BP_DIR/lib/unixodbc.sh
 source $BP_DIR/lib/cache.sh
 source $BP_DIR/lib/dependencies.sh
 source $BP_DIR/lib/vendor/new_relic/install.sh $BUILD_DIR
