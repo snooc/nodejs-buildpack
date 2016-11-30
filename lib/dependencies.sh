@@ -22,6 +22,8 @@ rebuild_node_modules() {
 
   export C_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
   export CPLUS_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
+
+  export LIBRARY_PATH="$build_dir/.heroku/unixodbc/lib"
   export LD_RUN_PATH="$build_dir/.heroku/unixodbc/lib"
   export LD_LIBRARY_PATH="$build_dir/.heroku/unixodbc/lib"
 
