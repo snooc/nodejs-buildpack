@@ -145,8 +145,6 @@ echo "!!! envdir"
 ls -lh $ENV_DIR
 echo "!!! bpdir"
 ls -lh $BP_DIR
-echo "!!! cachedir"
-ls -lh $CACHE_DIR
 
 header "Building dependencies"
 build_dependencies | output "$LOG_FILE"
