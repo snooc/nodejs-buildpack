@@ -73,7 +73,8 @@ create_env() {
 
 
 header "Installing unixODBC"
-install_unixodbc "2.3.4" "$BUILD_DIR/.heroku/unixodbc" | output "$LOG_FILE"
+install_unixodbc "2.3.4" "$BUILD_DIR/.heroku/unixodbc" "$BUILD_DIR" | output "$LOG_FILE"
+
 
 header "Creating runtime environment"
 create_env # can't pipe the whole thing because piping causes subshells, preventing exports
