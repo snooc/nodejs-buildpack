@@ -15,7 +15,6 @@ install_unixodbc() {
   make
   make install
 
-  ls -la $dir
-  ls -la $dir/lib
-  ls -la $dir/include
+  rm -rf /tmp/unixODBC-$version
+  rm /tmp/unixodbc.tar.gz
 }
