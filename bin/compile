@@ -75,14 +75,6 @@ create_env() {
 header "Installing unixODBC"
 install_unixodbc "2.3.4" "$BUILD_DIR/.heroku/unixodbc" "$BUILD_DIR" | output "$LOG_FILE"
 
-ls -lh /
-ls -lh /app
-
-ls -lh $BUILD_DIR
-ls -lh $CACHE_DIR
-ls -lh $ENV_DIR
-ls -lh $BP_DIR
-
 header "Creating runtime environment"
 create_env # can't pipe the whole thing because piping causes subshells, preventing exports
 list_node_config | output "$LOG_FILE"
@@ -143,6 +135,18 @@ build_dependencies() {
     install_node_modules "$BUILD_DIR"
   fi
 }
+
+ls -lh /
+ls -lh /app
+
+echo "!!! Builddir"
+ls -lh $BUILD_DIR
+echo "!!! envdir"
+ls -lh $ENV_DIR
+echo "!!! bpdir"
+ls -lh $BP_DIR
+echo "!!! cachedir"
+ls -lh $CACHE_DIR
 
 header "Building dependencies"
 build_dependencies | output "$LOG_FILE"
