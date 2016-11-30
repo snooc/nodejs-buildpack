@@ -20,8 +20,8 @@ install_node_modules() {
 rebuild_node_modules() {
   local build_dir=${1:-}
 
-  export C_INCLUDE_PATH="$C_INCLUDE_PATH:$build_dir/.heroku/unixodbc/include"
-  export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$build_dir/.heroku/unixodbc/include"
+  export C_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
+  export CPLUS_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
 
   if [ -e $build_dir/package.json ]; then
     cd $build_dir
