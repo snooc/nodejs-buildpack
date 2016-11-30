@@ -1,6 +1,7 @@
 install_unixodbc() {
   local version="$1"
   local dir="$2"
+  local build_dir="$3"
 
   local download_url="http://www.unixodbc.org/unixODBC-$version.tar.gz"
   echo "Downloading and installing unixODBC at $download_url"
@@ -14,10 +15,8 @@ install_unixodbc() {
   make
   make install
 
-  export PATH="$dir/bin:$PATH"
-  export LD_LIBRARY_PATH="$dir/lib"
-  export LDFLAGS="-L$dir/lib"
-  export CXXFLAGS="-I$dir/lib"
-
-  env
+  echo "export PATH=\"$dir/bin:$PATH\"" > $bp_dir/unixodbc
+  echo "export LD_LIBRARY_PATH=\"$dir/lib\"" >> $bp_dir/unixodbc
+  echo "export LDFLAGS=\"-L$dir/lib\"" >> $bp_dir/unixodbc
+  echo "export CXXFLAGS=\"-I$dir/lib\"" >> $bp_dir/unixodbc
 }
