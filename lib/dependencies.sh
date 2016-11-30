@@ -20,6 +20,7 @@ install_node_modules() {
 rebuild_node_modules() {
   local build_dir=${1:-}
 
+  export LD_LIBRARY_PATH="$build_dir/.heroku/unixodbc/lib"
   export C_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
   export CPLUS_INCLUDE_PATH="$build_dir/.heroku/unixodbc/include"
 
