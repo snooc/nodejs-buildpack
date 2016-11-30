@@ -16,6 +16,7 @@ install_unixodbc() {
 
   export PATH="$dir/bin:$PATH"
   export LD_LIBRARY_PATH="$dir/lib"
+  export LDFLAGS="-L$dir/lib"
 
   env
 }
