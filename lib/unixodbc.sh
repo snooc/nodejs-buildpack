@@ -15,6 +15,7 @@ install_unixodbc() {
   make
   make install
 
+  mkdir -p $build_dir/.profile.d
   echo "export PATH=\"$dir/bin:$PATH\"" > $build_dir/.profile.d/unixodbc
   echo "export LD_LIBRARY_PATH=\"$dir/lib\"" >> $build_dir/.profile.d/unixodbc
   echo "export LDFLAGS=\"-L$dir/lib\"" >> $build_dir/.profile.d/unixodbc
