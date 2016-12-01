@@ -23,7 +23,7 @@ copy_unixodbc() {
   local from_dir="$1"
   local dir="$2"
 
-  mpdir -p $dir
+  mkdir -p $dir
   cp -R $from_dir $dir
   echo "Copied unixodbc and drivers"
 }
