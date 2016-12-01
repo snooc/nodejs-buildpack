@@ -24,7 +24,7 @@ copy_unixodbc() {
   local dir="$2"
 
   mkdir -p $dir
-  cp -R $from_dir $dir
+  cp -R $from_dir/* $dir
   echo "Copied unixodbc and drivers"
 
   ls -la $dir
