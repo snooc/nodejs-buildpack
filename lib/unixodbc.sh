@@ -18,3 +18,12 @@ install_unixodbc() {
   rm -rf /tmp/unixODBC-$version
   rm /tmp/unixodbc.tar.gz
 }
+
+copy_unixodbc() {
+  local from_dir="$1"
+  local dir="$2"
+
+  mpdir -p $dir
+  cp -R $from_dir $dir
+  echo "Copied unixodbc and drivers"
+}
