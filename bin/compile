@@ -20,6 +20,8 @@ $BP_DIR/compile-extensions/bin/check_stack_support
 
 env
 
+echo $BUILD_DIR
+
 mkdir -p "$BUILD_DIR/.heroku/node/"
 cd $BUILD_DIR
 export PATH="$BUILD_DIR/.heroku/node/bin":$PATH
